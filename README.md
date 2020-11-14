@@ -81,3 +81,10 @@ Should be installed by default if using the conda environment. Else refer to the
 
 Run the ```gekko_example.py``` file to check if GEKKO has been configured properly.
 
+
+## Working with MINLPs
+
+GEKKO is capable of handling MINLPs. See the example in ```MINLP/gekko_nonlinear_constraint.py```.
+
+Gurobi is capable of piecewise linear approximation of non-linear functions using SOS2 variables. See the example in ```MINLP/gurobi_nonlinear_constraint.py```.
+
