@@ -37,7 +37,7 @@ CVXPY should come with external CVXOPT and Gurobi solvers installed when using t
 ## PuLP LP modelling framework
 
 **Description**  
-(PuLP)[https://coin-or.github.io/pulp/] is an LP modeler written in Python. PuLP can generate MPS or LP files and call GLPK, COIN-OR CLP/CBC, CPLEX, GUROBI, MOSEK, XPRESS, CHOCO, MIPCL, SCIP to solve **linear problems**.
+[PuLP](https://coin-or.github.io/pulp/) is an LP modeler written in Python. PuLP can generate MPS or LP files and call GLPK, COIN-OR CLP/CBC, CPLEX, GUROBI, MOSEK, XPRESS, CHOCO, MIPCL, SCIP to solve **linear problems**.
 
 **Installation**  
 Should be installed by default in the conda environment.
