@@ -54,6 +54,15 @@ dependencies:
   - zipp=3.4.0=pyhd3eb1b0_0
   - zlib=1.2.11=h516909a_1010
   - pip:
+    - click==7.1.2
     - cvxopt==1.2.5
+    - flask==1.1.2
+    - flask-cors==3.0.9
+    - gekko==0.2.8
+    - itsdangerous==1.1.0
+    - jinja2==2.11.2
+    - markupsafe==1.1.1
+    - six==1.15.0
+    - werkzeug==1.0.1
 prefix: /home/niloy/anaconda3/envs/cvxpy
 
