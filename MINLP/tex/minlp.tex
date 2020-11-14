@@ -1,0 +1,45 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\title{Minimal examples of MINLPs}
+\author{Niloy Saha}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{MINLP with linear objective and non-linear constraint}
+Let $\mathbb{S}$ denote the set of switches and $\mathbb{C}$ denote the set of controllers. Each controller $j \in \mathbb{C}$ has a capacity $\mu_j$, and a unit cost of using it $c_j$. Let the binary variable $x_{ij}$ denote whether switch $i \in \mathbb{S}$ is assigned to controller $j \in \mathbb{C}$. The response time of a controller is given as:
+\begin{equation}
+rt_j = \frac{1}{\mu_j - \sum_{i \in \mathbb{S}} x_{ij}} \quad \forall j \in \mathbb{C}
+\end{equation}  We want to assign switches to controllers so that the overall cost of assignment $\sum_j c_j \sum_i x_{ij}$ is minimized, provided the response time of a controller $rt_j$ is below a threshold $\theta$.
+
+The problem is formulated as an mixed integer non-linear programming (MINLP) problem with a linear objective and non-linear constraint as follows:
+
+\begin{subequations}
+\begin{align}
+   & \min && \sum_j c_j \sum_i x_{ij} \label{objective1} \\
+   & \text{subject to} && \sum_{j \in \mathbb{C}} x_{ij} = 1 \quad \forall i \in \mathbb{S} \label{constraint1} \\
+   & && rt_j \leq \theta \quad \forall j \in \mathbb{C} \label{constraint2} \\
+   & && x_{ij} \in \{0, 1\}
+\end{align}
+\end{subequations}
+
+Here Equation \eqref{constraint1} ensures each switch is assigned to only one controller, and Equation \eqref{constraint2} specifies the non-linear constraint.
+
+\section{MINLP with non-linear objective and linear constraints}
+Here, we consider the same problem as above, but consider the objective as minimizing the overall response time.
+
+\begin{subequations}
+\begin{align}
+   & \min && \sum_j rt_j \label{objective2} \\
+   & \text{subject to} && \sum_{j \in \mathbb{C}} x_{ij} = 1 \quad \forall i \in \mathbb{S} \label{constraint3} \\
+   & && x_{ij} \in \{0, 1\}
+\end{align}
+\end{subequations}
+
+Here Equation \eqref{constraint3} ensures each switch is assigned to only one controller, and Equation \eqref{objective2} specifies the non-linear objective.
+
+\end{document}
